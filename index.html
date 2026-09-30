@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskPulse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">⚡</div>
+    <h1>TaskPulse</h1>
+  </header>
+
+  <main class="layout">
+
+    <!-- LEFT: Add Task -->
+    <section class="card">
+      <h2>Add Task</h2>
+
+      <label for="taskName">Task name</label>
+      <input type="text" id="taskName" placeholder="Enter task name" />
+
+      <label for="category">Category</label>
+      <select id="category">
+        <option value="">Select category</option>
+        <option value="Work">Work</option>
+        <option value="Study">Study</option>
+        <option value="Personal">Personal</option>
+      </select>
+
+      <label>Priority</label>
+      <div class="priority-group">
+        <label><input type="radio" name="priority" value="High" checked /> High</label>
+        <label><input type="radio" name="priority" value="Medium" /> Medium</label>
+        <label><input type="radio" name="priority" value="Low" /> Low</label>
+      </div>
+
+      <button id="addBtn" class="btn-primary">Add Task</button>
+      <p id="hint" class="hint">Add a task to get started</p>
+    </section>
+
+    <!-- MIDDLE: Task List -->
+    <section class="card">
+      <div class="toolbar">
+        <input type="text" id="searchInput" placeholder="Search tasks..." />
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+      </div>
+
+      <div class="sort-row">
+        <label for="sortSelect">Sort by:</label>
+        <select id="sortSelect">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="priority">Priority</option>
+        </select>
+      </div>
+
+      <ul id="taskList" class="task-list">
+       
+      </ul>
+    </section>
+
+    <!-- RIGHT: Timer + Stats -->
+    <aside class="side">
+      <section class="card">
+        <h2>Focus Timer</h2>
+        <div id="timerDisplay" class="timer">25:00</div>
+        <div class="timer-btns">
+          <button id="startBtn" class="btn-primary">▶ Start</button>
+          <button id="pauseBtn" class="btn-outline">⏸ Pause</button>
+          <button id="resetBtn" class="btn-outline">⟳ Reset</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Stats</h2>
+        <div class="stat-row"><span>Total</span><strong id="statTotal">0</strong></div>
+        <div class="stat-row"><span>Completed</span><strong id="statCompleted">0</strong></div>
+        <div class="stat-row"><span>Remaining</span><strong id="statRemaining">0</strong></div>
+        <div class="stat-row"><span>Progress</span><strong id="statProgress">0%</strong></div>
+        <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+      </section>
+    </aside>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
